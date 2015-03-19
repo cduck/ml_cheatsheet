@@ -79,6 +79,8 @@ $f(\bx) = \tp{\bx}\bA\bB + \bA\bB\bx + \tp{\bx}\bA\bB\bx \Leftrightarrow \frac{d
 \ruler
 $\bH_{i,j}=\frac{\partial^2 f}{\partial x_i \partial x_j}$;
 $\nabla_{x}(a\bx) = a\bI$
+\ruler
+$\nabla_{x}x^T A x = x^T(A+A^T) = (A+A^T)x$
 % --------------------------------
 
 \section{Perceptron}
@@ -386,6 +388,35 @@ $L(\btheta,\xi,\alpha,\lambda) = \frac{1}{2}\norm{\btheta}^2 + \frac{C}{n}\sum_{
 \ruler
 \textbf{Soft margein SVM dual problem}:
 $\min_{\balpha} \frac{1}{2}\tp{\balpha}\diag(\by)\mathbf{K}\diag(\by)\balpha - \tp{\balpha}\mathbf{1}$, s.t. $\mathbf{0}\leq\balpha\leq\frac{C}{n}$.
+
+\section{K Nearest Neighbors}
+%\textbf{}:
+$\epsilon^*(x)$: Error of optimal prediction\\
+$\epsilon_{NN}(x)$: Error of bearest neighbor\\
+Theorem: $\lim_{n\rightarrow\infty}\epsilon_{NN}\leq 2\epsilon^*$\\
+For kNN: $\lim_{n\rightarrow\infty, k\rightarrow\infty,k/n\rightarrow\infty}\epsilon_{kNN}=\epsilon^*$
+\ruler
+\textbf{Curse of Dimensionality}:\\
+Problem: D on the order of (or greater than) N\\
+Remedies:\\
+\begin{enumerate} \itemsep0pt \parskip0pt \parsep0pt
+  \item Get more data: Make N larger
+  \item Make better features: Make D smaller
+  \item Use better distance metric: Effectively make D smaller ☺︎
+\end{enumerate}
+
+\section{Random Distributions}
+\textbf{Laplace}:
+$f(x|\mu,b) = \frac{1}{2b}e^{-\frac{|{x-\mu}|}{b}}$
+\ruler
+\textbf{Poisson}:
+$\!f(k; \lambda)= \Pr(X{=}k)= \frac{\lambda^k e^{-\lambda}}{k!}$
+\ruler
+\textbf{Gaussian}:
+$f(x|\mu,\sigma) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-\frac{(x - \mu)^2}{2 \sigma^2}}$
+
+\vspace*{\fill}
+\section{}
 
 \end{multicols*}
 \end{document}
